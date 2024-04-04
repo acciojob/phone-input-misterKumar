@@ -5,11 +5,11 @@ const App = () => {
   const [inp, setInp] = useState("");
 
   function handleChange(event) {
-    const inputValue = event.target.value;
+    let inputValue = event.target.value;
     // Remove non-numeric characters from input
     const numericValue = inputValue.replace(/\D/g, "");
     // Check if the input is empty or contains only numbers
-    if (inputValue === "" || /^\d+$/.test(inputValue)) {
+    if (numericValue.length <= 10) {
       // Format the phone number
       let formattedNumber = "";
       if (numericValue.length > 0) {
